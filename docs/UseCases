@@ -22,6 +22,15 @@ postcondition: customer is logged out and their account is deleted
 Query:
 DELETE FROM CUSTOMERS WHERE ID = 1;
 
+d. Customer Updates Account Info:
+
+Actor: Customer
+Precondition: Customer is logged
+Postcondition: Customer changes account information
+Query:(Say customer wants to change first name)
+UPDATE CUSTOMERS SET FirstName = ‘Fred’ WHERE FirstName = John;
+
+
 2. a. Add a delivery to the delivery schedule
 
 Actor: Admin
