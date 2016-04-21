@@ -4,7 +4,9 @@ CREATE TABLE CUSTOMERS(
 	LastName	varchar(15) not null,
 	Phone char(12) not null,	
 	Email varchar(20) not null,
-	Password char(20) not null
+	Password char(20) not null,
+	IsAdmin int not null,
+
 )
 
 CREATE TABLE DELIVERY_SCHEDULE(
