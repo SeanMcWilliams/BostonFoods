@@ -41,14 +41,26 @@ UPDATE DELIVERY_SCHEDULE SET LocationAddress = "35 South Street, Brighton MA, 02
 c. Delivery is cancelled
 
 Actor: Admin
-precondition:
-postcondition:
+precondition: logged in as Admin
+postcondition: Deliver is cancelled and deleted from the schedule
 Query:
 DELETE FROM DELIVERY_SCHEDULE WHERE LocationName = "CSlab" AND LocationAddress = "140 Commonwealth Ave., Chestnut Hill MA, 02135" AND Date = "May 2, 2016" AND Time = "5pm";
 
 3. a. Customer Places an order
 
+Actor: Customer
+precondition: logged in 
+postcondition: customer's order is added to the CURRENT_ORDERS table
+Query:
+INSERT INTO CURRENT_ORDERS (PickUpDate, FirstName, LastName, CustID, BoxType, Quantity, Price, DeliveryLocation) VALUES ("May 2, 2016", "Jon", "Snow", 1, "LargeBox", 2, 50, "140 Commonwealth Ave., Chestnut Hill MA, 02135");
+
 b. Customer cancels an order
+
+Actor: Customer
+precondition: logged in as customer
+postcondition: customer's order is cancelled and removed from the CURRENT_ORDERS table
+Query:
+DELETE FROM CURRENT_ORDERS WHERE CustID = "1";
 
 4. a. Delivery Location is deleted
 
