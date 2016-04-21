@@ -87,6 +87,12 @@ postcondition: delivery location loc is removed from the DELIVERY_LOCATIONS tabl
 Query: 
 DELETE * FROM DELIVERY_LOCATIONS WHERE LocationName = “loc”;
 
+c. Delivery Date is changed.
+Actor: Admin
+precondition: logged in as Admin
+postcondition: Delivery  date for an order is changed
+Query: 
+UPDATE * FROM DELIVERY_SCHEDULE WHERE LocationAddress = ‘Boston College’;
 
 5. a. Box type is added
 
