@@ -1,0 +1,57 @@
+1. a. Customer creates an account.
+
+Actor: Customer
+precondition: customer visits site (none)
+postcondition: customer has an account
+Query:
+INSERT INTO CUSTOMERS (ID, FirstName, LastName, Phone, Email, Password) VALUES (1, 'Jon', 'Snow', '1231231234', 'LordCommander@gmail.com', 'WinterIsComing');
+
+b. Customer changes their password
+
+Actor: Customer
+precondition: customer has been sent an email with a code they can use to update their password
+postcondition: customer has a new password
+Query:
+UPDATE CUSTOMERS SET Password = "WinterIsHere" WHERE ID = 1;
+
+c. Customer deletes their account
+
+Actor: Customer
+precondition: customer is logged in
+postcondition: customer is logged out and their account is deleted
+Query:
+DELETE FROM CUSTOMERS WHERE ID = 1;
+
+2. a. Add a delivery to the delivery schedule
+
+Actor: Admin
+precondition: logged in as admin
+postcondition: delivery is added to the schedule
+Query:
+INSERT INTO DELIVERY_SCHEDULE (Date, Time, LocationName, LocationAddress) VALUES ("May 2, 2016", "5pm", "CSLab", "140 Commonwealth Ave, Chestnut Hill MA, 02135");
+
+b. Update a delivery in the delivery schedule
+
+Actor: Admin
+precondition: logged in as admin
+postcondition: a delivery has some of its information updated
+Query:
+UPDATE DELIVERY_SCHEDULE SET LocationAddress = "35 South Street, Brighton MA, 02135", LocationName = "The House" WHERE Date = "May 2, 2016" AND Time = "5pm";
+
+c. Delivery is cancelled
+
+Actor: Admin
+precondition:
+postcondition:
+Query:
+DELETE FROM DELIVERY_SCHEDULE WHERE LocationName = "CSlab" AND LocationAddress = "140 Commonwealth Ave., Chestnut Hill MA, 02135" AND Date = "May 2, 2016" AND Time = "5pm";
+
+3. a. Customer Places an order
+
+b. Customer cancels an order
+
+4. a. Delivery Location is deleted
+
+5. a. Box type is added
+
+b. Box type is deleted
