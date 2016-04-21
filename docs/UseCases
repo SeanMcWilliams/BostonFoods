@@ -62,8 +62,29 @@ postcondition: customer's order is cancelled and removed from the CURRENT_ORDERS
 Query:
 DELETE FROM CURRENT_ORDERS WHERE CustID = "1";
 
-4. a. Delivery Location is deleted
+4. a. New Delivery Location is added
+
+Actor: Admin
+precondition: logged in as Admin
+postcondition: new delivery location added to the DELIVERY_LOCATIONS table
+Query:
+INSERT INTO DELIVERY_LOCATIONS (LocationName, LocationAddress) VALUES (“LocName”, “LocAddress”);
+
+b. Delivery Location is deleted
+
+Actor: Admin
+precondition: logged in as Admin
+postcondition: delivery location loc is removed from the DELIVERY_LOCATIONS table
+Query: 
+DELETE * FROM DELIVERY_LOCATIONS WHERE LocationName = “loc”;
+
 
 5. a. Box type is added
+
+Actor: Admin
+precondition: logged in as Admin
+postcondition: new Box type added to BOXES table
+Query:
+INSERT INTO BOXES (BoxName, FoodItems, Price) VALUES (“fruits”, “apple, orange, banana”, 10);
 
 b. Box type is deleted
