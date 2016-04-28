@@ -1,4 +1,9 @@
 # project-Boston Food
+Colin L Crawford
+Benjamin W Keene
+Sean B McWilliams
+
+
 4/23 - Data Docs
 RUBRIC - For Data Documentation
 CRITERIA:
