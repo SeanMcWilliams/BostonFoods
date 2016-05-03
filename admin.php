@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Admin</title>
-	<link rel="stylesheet" type="text/css" href="../css/hw10.css">
+	<link rel="stylesheet" type="text/css" href="../css/project.css">
 	<script type="text/javascript">
 		function validate(){
 			var subject = document.getElementById("subject").value;

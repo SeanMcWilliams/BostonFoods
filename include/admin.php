@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Admin</title>
-	<link rel="stylesheet" type="text/css" href="../css/hw10.css">
+	<link rel="stylesheet" type="text/css" href="../css/project.css">
 	<script type="text/javascript">
 		function validate(){
 			var subject = document.getElementById("subject").value;
@@ -45,18 +45,18 @@
 <?php
 function displaytable(){
 	include ('dbconn.php');
-	$connect = connect_to_db("keeneb");
-	$query = "select * from club";
+	$connect = connect_to_db("crawfocc");
+	$query = "select * from Customers";
 	$result = perform_query($connect, $query);
 	$i = 1;
-	echo "<table><tr><th>Name</th><th>Email</th><th>Password</th><th>RegistrationDate</th><th>Type</th></tr>";
+	echo "<table><tr><th>ID</th><th>FirstName</th><th>LastName</th><th>Phone</th><th>Email</th></tr>";
 		while ($row = $result->fetch_assoc()) {
 			if (($i%2)==0){
-				echo "<tr class=\"even\"><td>" . $row["Name"]. "</td><td>" . $row["Email"]."</td><td>". $row["Password"]. "</td><td>". $row["RegistrationDate"]. "</td><td>". $row["MembershipType"]. "</td></tr>";
+				echo "<tr class=\"even\"><td>" . $row["ID"]. "</td><td>" . $row["FirstName"]."</td><td>". $row["LastName"]. "</td><td>". $row["Phone"]. "</td><td>". $row["Email"]. "</td></tr>";
      			$i++;
      		}
      		else{
-     			echo "<tr class=\"odd\"><td>" . $row["Name"]. "</td><td>" . $row["Email"]."</td><td>". $row["Password"]. "</td><td>". $row["RegistrationDate"]. "</td><td>". $row["MembershipType"]. "</td></tr>";
+     			echo "<tr class=\"odd\"><td>" . $row["ID"]. "</td><td>" . $row["FirstName"]."</td><td>". $row["LastName"]. "</td><td>". $row["Phone"]. "</td><td>". $row["Email"]. "</td></tr>";
      			$i++;
      		}
      	}	
@@ -71,10 +71,6 @@ function displayform(){
 			Subject  <input name="subject" id="subject" type= "text" size=20><br>
 			Your Message<br><textarea rows="4" id="message" name="message" cols="50"></textarea><br>
 			Password<input type="password" id ="password"name="password" size=20><br>
-			Membership Type<br>
-			Paid<input type="checkbox" id="membership" name="membership"value="paid">
-			Free<input type="checkbox" id="membership" name="membership" value="free">
-			Trial<input type="checkbox" id="membership" name="membership" value="trial">
 			<div id ="result">
 				<p id="errors" class="error"></p>
 			</div>
