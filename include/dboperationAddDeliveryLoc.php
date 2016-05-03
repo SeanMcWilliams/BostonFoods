@@ -16,8 +16,8 @@
 		$dbc = connect_to_db( "crawfocc" );
 		$name = $_POST["name"];
 		$address = $_POST["address"];
-/*
-		$query = "SELECT * FROM DELIVERY_LOCATIONS WHERE LocationName = '$name'";
+
+		$query = "SELECT * FROM DELIVERY_LOCATIONS WHERE Location_Name = '$name'";
 		$result = perform_query($dbc, $query);
 		$a = mysqli_fetch_array( $result, MYSQLI_ASSOC );
 		if (mysqli_num_rows( $result ) != 0){
@@ -26,9 +26,10 @@
 			<a href="../pages/deliveryLocations.html">Return to add new location</a>
 			<?php
 			die("");
-		} */
-		$query2 = "INSERT INTO DELIVERY_LOCATIONS (LocationName, LocationAddress) VALUES ('$name', '$address')";
+		} 
+		$query2 = "INSERT INTO DELIVERY_LOCATIONS (Location_Name, Location_Address) VALUES ('$name', '$address')";
 		perform_query($dbc, $query2);
 		echo "<h2>Location added successfully!</h2>";
+		echo "<a href=\"deliveryLocations.html\">go back</a>";
 	}
 	
