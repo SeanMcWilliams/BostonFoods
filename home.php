@@ -41,7 +41,7 @@ if($userName != null){
 		<li></li>
 		<?php
 
-		if($isAdmin == 1){
+		if($admin == 1){
 			echo "<li><a href=\"adminHome.php\">Admin Page</a></li>";
 		}
 
