@@ -1,5 +1,7 @@
 <?php
 
+
+
 $userName = null;
 $admin = 0;
 if(isset($_COOKIE["firstName"])){
@@ -38,11 +40,10 @@ if($userName != null){
 
 		?>
 		<li><a href="pages/createaccount.html">Create An Account!</a></li>
-		<li></li>
 		<?php
 
-		if($isAdmin == 1){
-			echo "<li><a href=\"adminHome.php\">Admin Page</a></li>";
+		if($admin == 1){
+			echo "<li><a href=\"include/admin.php\">Admin Page</a></li>";
 		}
 
 		?>

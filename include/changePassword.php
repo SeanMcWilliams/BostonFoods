@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>Club Home Page</title>
+	<title>Change Password</title>
 </head>
 <body>
 	<?php handler();
@@ -15,7 +15,7 @@ function handler(){
 	include ('dbconn.php');
 	$email = $_POST['email'];
 	$connect = connect_to_db("keeneb");
-	$query = "select * from club where email= \"$email\"";
+	$query = "select * from customers where email= \"$email\"";
 	$result = perform_query($connect, $query);
 	if (mysqli_fetch_array( $result, MYSQLI_ASSOC )){
 	    $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
@@ -33,12 +33,12 @@ function handler(){
     	$result1 = perform_query($connect, $query1);
     	mail($email1, "New Password", $password2);
 		echo "A new password has been emailed to you.";
-		echo "<a href='http://cscilab.bc.edu/~keeneb/hw10/index.php'>Homepage</a>";
+		echo "<a href='http://cscilab.bc.edu/~crawfocc/project/.home. php'>Homepage</a>";
 		
 	}
 	else {
 	    echo "This email does not exist.";
-	    echo "<a href='http://cscilab.bc.edu/~keeneb/hw10/index.php?pass=forgot+password'>Back</a>";
+	    echo "<a href='http://cscilab.bc.edu/~crawfocc/project/.home.php?pass=forgot+password'>Back</a>";
 		disconnect_from_db( $connect, $result);
 		
 
