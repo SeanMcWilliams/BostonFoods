@@ -109,3 +109,5 @@ Precondition: Logged in as Admin
 Postcondition: Type of Box is deleted
 Query:
 DELETE * FROM CURRENT_ORDERS WHERE BoxType=‘Medium’
+
+

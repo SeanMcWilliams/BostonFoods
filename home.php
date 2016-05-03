@@ -1,5 +1,7 @@
 <?php
 
+print_r($_COOKIE);
+
 $userName = null;
 $admin = 0;
 if(isset($_COOKIE["firstName"])){
