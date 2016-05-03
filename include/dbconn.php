@@ -3,7 +3,7 @@
 function connect_to_db( $dbname ){
 	// REMEMBER!!!
 	// Change the host, login, and db information
-	$dbc = @mysqli_connect( "localhost", "*****", "*****", $dbname ) or
+	$dbc = @mysqli_connect( "localhost", "crawfocc", "AjdCfABi", $dbname ) or
 			die( "Connect failed: ". mysqli_connect_error() );
 	return $dbc;
 }

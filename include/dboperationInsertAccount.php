@@ -13,11 +13,11 @@
 	include ("dbconn.php");
 	handleForm();
 	function handleForm(){
-		$dbc = connect_to_db( "mcwillis" );
+		$dbc = connect_to_db( "crawfocc" );
 		$firstname = $_POST["firstname"];
 		$lastname = $_POST["lastname"];
 		$email = $_POST["email"];
-		$phone = $_POST["phone"]
+		$phone = $_POST["phone"];
 		$password1 = $_POST["password1"];
 		$password2 = $_POST["password2"];
 

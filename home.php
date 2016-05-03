@@ -2,11 +2,11 @@
 
 $userName = null;
 $admin = 0;
-if(isset($_COOKIE["userName"])){
-  $userName = $_COOKIE["userName"];
+if(isset($_COOKIE["firstName"])){
+  $userName = $_COOKIE["firstName"];
 }
-if(isset($_COOKIE["admin"])){
-	$admin = $_COOKIE["admin"];
+if(isset($_COOKIE["isAdmin"])){
+	$admin = $_COOKIE["isAdmin"];
 }
 
 ?>
@@ -39,7 +39,13 @@ if($userName != null){
 		?>
 		<li><a href="pages/createaccount.html">Create An Account!</a></li>
 		<li></li>
-		<li></li>
+		<?php
+
+		if($isAdmin == 1){
+			echo "<li><a href=\"adminHome.php\">Admin Page</a></li>";
+		}
+
+		?>
 	</ul>
 </body>
 </html>
