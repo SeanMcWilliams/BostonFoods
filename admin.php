@@ -45,7 +45,7 @@
 <?php
 function displaytable(){
 	include ('dbconn.php');
-	$connect = connect_to_db("keeneb");
+	$connect = connect_to_db("crawfocc");
 	$query = "select * from Customers";
 	$result = perform_query($connect, $query);
 	$i = 1;
