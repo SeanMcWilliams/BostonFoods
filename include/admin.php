@@ -52,11 +52,11 @@ function displaytable(){
 	echo "<table><tr><th>ID</th><th>FirstName</th><th>LastName</th><th>Phone</th><th>Email</th></tr>";
 		while ($row = $result->fetch_assoc()) {
 			if (($i%2)==0){
-				echo "<tr class=\"even\"><td>" . $row["ID"]. "</td><td>" . $row["FIRSTNAME"]."</td><td>". $row["LASTNAME"]. "</td><td>". $row["PHONE"]. "</td><td>". $row["EMAIL"]. "</td></tr>";
+				echo "<tr class=\"even\"><td>" . $row["ID"]. "</td><td>" . $row["FirstName"]."</td><td>". $row["LastName"]. "</td><td>". $row["Phone"]. "</td><td>". $row["Email"]. "</td></tr>";
      			$i++;
      		}
      		else{
-     			echo "<tr class=\"odd\"><td>" . $row["ID"]. "</td><td>" . $row["FIRSTNAME"]."</td><td>". $row["LASTNAME"]. "</td><td>". $row["PHONE"]. "</td><td>". $row["EMAIL"]. "</td></tr>";
+     			echo "<tr class=\"odd\"><td>" . $row["ID"]. "</td><td>" . $row["FirstName"]."</td><td>". $row["LastName"]. "</td><td>". $row["Phone"]. "</td><td>". $row["Email"]. "</td></tr>";
      			$i++;
      		}
      	}	
