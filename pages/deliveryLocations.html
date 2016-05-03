@@ -18,7 +18,7 @@
 	<br><br>
 	<fieldset>
 	<legend>Delete Delivery Location</legend>
-		<form action="include/dboperationDeleteDeliveryLoc.php" method="POST">
+		<form action="../include/dboperationDeleteDeliveryLoc.php" method="POST">
 			<select id="locations">
 				
 			</select>
@@ -30,7 +30,7 @@
     <script type="text/javascript">
 		$(document).ready(function buildSelect(){
 
-			$.getJSON( "include/queryLocations.php" , function(data) {
+			$.getJSON( "../include/queryLocations.php" , function(data) {
 					
 							$.each(data, function(i, location){
 								$("#locations").append("<option value=\""+location.name + "\">" + location.name + "</option>");
