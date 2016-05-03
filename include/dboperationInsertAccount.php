@@ -10,7 +10,7 @@
 </html>
 
 <?php
-	include ("include/dbconn.php");
+	include ("dbconn.php");
 	handleForm();
 	function handleForm(){
 		$dbc = connect_to_db( "mcwillis" );

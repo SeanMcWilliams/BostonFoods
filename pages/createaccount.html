@@ -3,12 +3,12 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Create an account</title>
-	<script type="text/javascript" src="myAccountValidate.js"></script>
+	<script type="text/javascript" src="../js/myAccountValidate.js"></script>
 </head>
 <body>
 	<h1> Create an account </h1>
 	<fieldset>
-	<form action="dboperation.php" method="POST" onsubmit = "return validate()">
+	<form action="../include/dboperation.php" method="POST" onsubmit = "return validate()">
 			First Name:<br>
 			<input type="text" name="firstname" id="firstname" > <span class="error" id="firstnameerr"></span><br>
 			Last Name:<br>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Log In!</title>
+	<script type="text/javascript" src="../js/logInValidate.js"></script>
+</head>
+<body>
+	<h1> Log In! </h1>
+	<fieldset>
+	<form action="../include/dboperation.php" method="POST" onsubmit = "return validateLogIn()">
+
+			Email:<br>
+			<input type="text" name="email" id="email"> <span class="error" id="emailerr"></span><br>
+
+			Password:<br>
+			<input type="password" name="password1" id="password1"> <span class="error" id="p1err"></span><br>
+
+			<input type="submit" name="Submit" value="Submit">
+	</form>
+	</fieldset>
+</body>
+</html>
