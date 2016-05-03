@@ -32,6 +32,14 @@ if($userName != null){
 	
 	<ul>
 		<?php
+
+		if($admin == 1){
+			echo "<li><a href=\"include/admin.php\">Admin Page!</a></li>"; 
+			echo "<li><a href=\"pages/deliveryLocations.html\">Delivery Locations</a></li>"; //put this in the admin pannel
+			echo "<li><a href=\"pages/deliverySchedule.html\">Delivery Schedule</a></li>"; //put this in the admin pannel
+			echo "<li><a href=\"pages/boxes.html\">Boxes</a></li>"; //put this in the admin pannel
+		}
+
 		if($userName != null){
 			echo "<li><a href=\"pages/order.html\">Order!</a></li>";
 			echo "<li><a href=\"pages/logOut.html\">Log Out!</a></li>";
@@ -41,16 +49,7 @@ if($userName != null){
 
 		?>
 		<li><a href="pages/createaccount.html">Create An Account!</a></li>
-		<?php
-
-		if($admin == 1){
-			echo "<li><a href=\"include/admin.php\">Admin Page!</a></li>";
-			echo "<li><a href=\"pages/deliveryLocations.html\">Delivery Locations</a></li>";
-		}
-
-
-
-		?>
+		<li><a href="pages/aboutUs.html">About Us</a></li>
 	</ul>
 </body>
 </html>
