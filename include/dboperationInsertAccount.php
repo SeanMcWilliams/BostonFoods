@@ -40,11 +40,9 @@
 			die("");
 		}
 
-<<<<<<< HEAD
 		$query2 = "INSERT INTO CUSTOMERS (FirstName, LastName, Phone, Email, Password) VALUES ('$firstname', '$lastname', '$email', '$phone', '$p')";
-=======
+
 		$query2 = "INSERT INTO CUSTOMERS (FirstName, LastName, Phone, Email, Password, IsAdmin) VALUES ($firstname, $lastname, $phone, $email, $p, 0)";
->>>>>>> origin/master
 		perform_query($dbc, $query2);
 		echo "<h1>Welcome to Boston Foods!</h1>";
 		echo "<a href=\"../home.php\">return to the home page</a>";
