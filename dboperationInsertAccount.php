@@ -10,14 +10,14 @@
 </html>
 
 <?php
-	include ("dbconn.php");
+	include ("include/dbconn.php");
 	handleForm();
 	function handleForm(){
-		$dbc = connect_to_db( "crawfocc" );
+		$dbc = connect_to_db( "mcwillis" );
 		$firstname = $_POST["firstname"];
 		$lastname = $_POST["lastname"];
 		$email = $_POST["email"];
-		$phone = $_POST["phone"];
+		$phone = $_POST["phone"]
 		$password1 = $_POST["password1"];
 		$password2 = $_POST["password2"];
 
@@ -29,12 +29,12 @@
 		if (mysqli_num_rows( $result ) != 0){
 			echo "This email is already in use";
 			?> <br>
-			<a href="../pages/createaccount.html">Return to sign-up</a>
+			cscilab.bc.edu/~mcwillis/hw10/index.php
 			<?php
 			die("");
 		}
 
-		$query2 = "INSERT INTO CUSTOMERS (FirstName, LastName, Phone, Email, Password) VALUES ('$firstname', '$lastname', '$email', '$phone', '$p')";
+		$query2 = "INSERT INTO CUSTOMERS (FirstName, LastName, Phone, Email, Password) VALUES ('$firstname', '$lastname', '$email', '$phone', '$p'";
 		perform_query($dbc, $query2);
 		echo "<h1 style='color:white'>Welcome to Boston Foods!</h1>";
 	}
