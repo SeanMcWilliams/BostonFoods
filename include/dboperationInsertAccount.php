@@ -29,7 +29,7 @@
 		if (mysqli_num_rows( $result ) != 0){
 			echo "This email is already in use";
 			?> <br>
-			cscilab.bc.edu/~mcwillis/hw10/index.php
+			<a href="../pages/createaccount.html">Return to sign-up</a>
 			<?php
 			die("");
 		}
