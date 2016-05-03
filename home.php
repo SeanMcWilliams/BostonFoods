@@ -43,8 +43,11 @@ if($userName != null){
 		<?php
 
 		if($admin == 1){
-			echo "<li><a href=\"include/admin.php\">Admin Page</a></li>";
+			echo "<li><a href=\"include/admin.php\">Admin Page!</a></li>";
+			echo "<li><a href=\"deliveryLocations.html\">Delivery Locations</a></li>";
 		}
+
+
 
 		?>
 	</ul>
