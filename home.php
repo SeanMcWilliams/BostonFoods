@@ -44,7 +44,7 @@ if($userName != null){
 
 		if($admin == 1){
 			echo "<li><a href=\"include/admin.php\">Admin Page!</a></li>";
-			echo "<li><a href=\"deliveryLocations.html\">Delivery Locations</a></li>";
+			echo "<li><a href=\"pages/deliveryLocations.html\">Delivery Locations</a></li>";
 		}
 
 

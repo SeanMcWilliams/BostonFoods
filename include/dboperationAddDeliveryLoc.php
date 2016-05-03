@@ -30,6 +30,6 @@
 		$query2 = "INSERT INTO DELIVERY_LOCATIONS (Location_Name, Location_Address) VALUES ('$name', '$address')";
 		perform_query($dbc, $query2);
 		echo "<h2>Location added successfully!</h2>";
-		echo "<a href=\"deliveryLocations.html\">go back</a>";
+		echo "<a href=\"../pages/deliveryLocations.html\">go back</a>";
 	}
 	
