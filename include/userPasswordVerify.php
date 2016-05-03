@@ -13,6 +13,9 @@
 <?php
 function checkUserPass(){
 	include ('dbconn.php');
+	$first= $_POST["firstname"];
+	$last = $_POST["last"];
+	$phone = $_POST["phone"];
 	$pass = $_POST["password"];
 	$email = $_POST["email"];
 	$connect = connect_to_db("keeneb");
