@@ -33,6 +33,7 @@ if($userName != null){
 	<ul>
 		<?php
 		if($userName != null){
+			echo "<li><a href=\"pages/order.html\"></a></li>";
 			echo "<li><a href=\"pages/logOut.html\">Log Out!</a></li>";
 		} else {
 			echo "<li><a href=\"pages/logIn.html\">Log in!</a></li>";
