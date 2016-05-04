@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Admin</title>
-	<link rel="stylesheet" type="text/css" href="../css/project.css">
+	<link rel="stylesheet" type="text/css" href="../css/home.css">
 	<script type="text/javascript">
 		function validate(){
 			var subject = document.getElementById("subject").value;
@@ -33,7 +33,8 @@
 		}
 		</script>
 </head>
-<body>
+<body id="admin">
+	<p id="redtitle">Admin Page</p>
 	<?php 
 		displaytable();
 		displayform();
@@ -49,7 +50,7 @@ function displaytable(){
 	$query = "select * from CUSTOMERS";
 	$result = perform_query($connect, $query);
 	$i = 1;
-	echo "<table><tr><th>ID</th><th>FirstName</th><th>LastName</th><th>Phone</th><th>Email</th></tr>";
+	echo "<table class=\"table\"><tr id=\"tabletop\"><th>ID</th><th>FirstName</th><th>LastName</th><th>Phone</th><th>Email</th></tr>";
 		while ($row = $result->fetch_assoc()) {
 			if (($i%2)==0){
 				echo "<tr class=\"even\"><td>" . $row["ID"]. "</td><td>" . $row["FirstName"]."</td><td>". $row["LastName"]. "</td><td>". $row["Phone"]. "</td><td>". $row["Email"]. "</td></tr>";
@@ -66,15 +67,17 @@ function displaytable(){
 function displayform(){
 	?>
 	<form action= "password.php" onsubmit="return validate();" name ="formthree" method="post">
-		<fieldset>
-			<legend>Group Mail</legend><br>
-			Subject  <input name="subject" id="subject" type= "text" size=20><br>
-			Your Message<br><textarea rows="4" id="message" name="message" cols="50"></textarea><br>
-			Password<input type="password" id ="password"name="password" size=20><br>
-			<div id ="result">
-				<p id="errors" class="error"></p>
+		<fieldset class="fieldset" style="background-image: url(../background.jpg);">
+			<div class="adminmail">
+				<legend>Group Mail</legend><br>
+				Subject  <input style="background-color:white;" class= "textbox" name="subject" id="subject" type= "text" size=20><br>
+				Your Message<br><textarea style="background-color:white;" class= "textbox" rows="4" id="message" name="message" cols="50"></textarea><br>
+				Password<input style="background-color:white;" class= "textbox" type="password" id ="password" name="password" size=20><br>
+				<div id ="result">
+					<p id="errors" class="error"></p>
+				</div>
+				<input style="color:red;" class="button" type="submit" value="Submit">
 			</div>
-			<input type="submit" value="Submit">
 		</fieldset>
 	</form>
 	<?php

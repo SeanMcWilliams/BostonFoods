@@ -47,6 +47,7 @@ body{
 	
 }
 .fieldset{
+	margin-top: 7px;
 	width:40%;
 	background-color: black;
 	border-radius: 10px;
@@ -92,6 +93,52 @@ body{
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cb811', endColorstr='#77d42a',GradientType=0);
 	background-color: #D0F8FF;
 }
+.table{
+	background-image: url(../images-1.jpeg);
+	border-radius: 15px;
+	border: solid purple;
+	background-image-size: 100%;
+}
+#admin{
+	background-image: url(../image2.jpeg);
+	background-size: 100%;
+}
+#redtitle{
+	color: #FE0001;
+	text-shadow: 0 0 5px #A5F1FF, 0 0 10px #A5F1FF,
+             0 0 20px #A5F1FF, 0 0 30px #A5F1FF,
+             0 0 40px #A5F1FF;
+    text-align:center;
+    font-size: 400%;
+}
+#tabletop{
+	color: #FE0001;
+	text-shadow: 0 0 5px #A5F1FF, 0 0 10px #A5F1FF,
+             0 0 20px #A5F1FF, 0 0 30px #A5F1FF,
+             0 0 40px #A5F1FF;
 
+}
+.odd{
+	color: white;
+	text-shadow: 0 0 5px #A5F1FF, 0 0 10px #A5F1FF,
+             0 0 20px #A5F1FF, 0 0 30px #A5F1FF,
+             0 0 40px #A5F1FF;
+}
+.even{
+	color: black;
+	text-shadow: 0 0 5px #A5F1FF, 0 0 10px #A5F1FF,
+             0 0 20px #A5F1FF, 0 0 30px #A5F1FF,
+             0 0 40px #A5F1FF;
+}
+.adminmail{
+	color: #FE0001;
+	text-shadow: 0 0 5px #A5F1FF, 0 0 10px #A5F1FF,
+             0 0 20px #A5F1FF, 0 0 30px #A5F1FF,
+             0 0 40px #A5F1FF;
+
+}
+#subject{
+	style:"background-color:white;"
+}
 
 
