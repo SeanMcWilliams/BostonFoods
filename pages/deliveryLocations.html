@@ -20,8 +20,8 @@
 	<fieldset>
 	<legend>Delete Delivery Location</legend>
 		<form action="../include/dboperationDeleteDeliveryLoc.php" method="POST">
-			<select id="locations">
-				
+			<select id="locations" name="locations">
+
 			</select>
 			<input type="submit" name="Delete" value="Delete Location">
 		</form>
@@ -29,12 +29,12 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript">
-		$(document).ready(function buildSelect(){
+		$(document).ready(function(){
 
 			$.getJSON( "../include/queryLocations.php" , function(data) {
 					
 							$.each(data, function(i, location){
-								$("#locations").append("<option value=\""+location.name + "\">" + location.name + "</option>");
+								$("#locations").append("<option value=\""+ location.Location_Name + "\">" + location.Location_Name + "</option>");
 							});
 						
 						})
