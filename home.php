@@ -29,6 +29,9 @@ if($userName != null){
 }
 
 ?>
+<h1>Welcome to Boston Foods</h1>
+<h2>Boston Foods is a non-profit organization with a simple purpose:</h2>
+<h2>To sell delicious, healthy, high-quality foods at affordable prices, particularly to folks living in areas with limited access to nutritious eating options.</h2>
 	
 	<ul>
 		<?php
