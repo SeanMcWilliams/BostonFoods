@@ -2,16 +2,17 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>Create an account</title>
+	<title>Place an Order</title>
+	<link rel="stylesheet" type="text/css" href="../css/home.css">
 </head>
-<body>
-	<a href="../home.php">return home</a>
-	<h1> Order </h1>
-	<fieldset>
+<body id="placeOrder" >
+	<a id="link1" class="options" href="../home.php">return home</a>
+	<h1 id="greentitle"> Order </h1>
+	<fieldset class="fieldset">
 	<form action="include/dboperationOrder.php" method="POST">
-			Box Type:<br>
-			<input type="text" name="box" id="box">
-			<input type="submit" value="submit order">
+			<p  id="green" class:"options" >Box Type: </p><br>
+			<input class="textbox" type="text" name="box" id="box">
+			<input class="button" type="submit" value="submit order">
 			
 	</fieldset>
 </body>
