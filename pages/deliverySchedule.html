@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Delivery Schedule</title>
+</head>
+<body>
+
+	<table id="ordersTable">
+		<tr><th>Click</th><th>Name</th><th>Box Type</th><th>Quantity</th><th>Price</th><th>Pick Up Date</th><th>Delivery Location</th></tr>
+	</table>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript">
+		$(document).ready(function buildTable(){
+
+			$.getJSON( "queryOrders.php" , function(data) {
+					
+							$.each(data, function(i, order){
+								$("#ordersTable").append("<tr><td><input type=\"checkbox\" name=\"hide[]\" value=\""+ order.CustID + "\"></td><td>" + order.FirstName + order.LastName + "</td><td>" + order.BoxType + "</td><td>" + order.Quantity + "</td><td>" + order.price + "</td><td>" + order.PickUpDate + "</td><td>" + order.DeliveryLocationName + "</td></tr>");
+							});
+						
+						})
+						.fail(function() {
+								console.log( "getJSON error" );
+						});
+					});
+	</script>
+
+
+
+</body>
+</html>
