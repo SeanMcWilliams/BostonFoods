@@ -14,6 +14,12 @@
 			height: 500px;
 			width: 500px;
 			float: left;
+
+		}
+		#cOFieldset {
+			position: relative;
+			float: right;
+			top: -270px;
 		}
 	</style>
 </head>
@@ -21,6 +27,7 @@
 	<a  class="options" href="../home.php">return home</a>
 	<h1 id="greentitle"> Order </h1>
 	<fieldset class="fieldset">
+	<legend id="green" style="background-color: black">Place a new order!</legend>
 	<form action="../include/dboperationOrder.php" method="POST">
 			<input type="hidden" name="firstName" id="firstName">
 			<input type="hidden" name="lastName" id="lastName">
@@ -88,13 +95,31 @@
 						.fail(function() {
 								console.log( "getJSON error - boxes" );
 						});
-			
+			var cookieID = (Cookies.get("ID"))+"";
+			//console.log(cookieID);
+			$.getJSON( "../include/queryOrders.php",{id:cookieID}).done(function(data) {
+
+
+							$.each(data,function(i, order){
+								$("#currentOrders").append("<p>Hello</p>"+"<br>");
+								
+
+							});
+							})
+						.fail(function() {
+								console.log( "getJSON error - currentOrders" );
+						});
 					});
 			</script>
 			<input class="button" type="submit" value="submit order">
 			
 	</fieldset>
-
+	<fieldset class="fieldset" id="cOFieldset">
+		<legend id="green" style="background-color: black">Current Orders</legend>
+		<form id="currentOrders">
+			
+		</form>
+	</fieldset>
 	<div id="map"></div>
 
 </body>

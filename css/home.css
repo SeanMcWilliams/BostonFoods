@@ -14,8 +14,8 @@ background-image: url(../img/boston.jpg);
 }
 
 .options{
-	position: fixed;
-	margin-top: 10px;
+	position: absolute;
+	margin-top: 5%;
 	font-size: 30px;
 	color: #D0F8FF;
     text-shadow: 0 0 5px #A5F1FF, 0 0 10px #A5F1FF,
