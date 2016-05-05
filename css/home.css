@@ -140,5 +140,61 @@ body{
 #subject{
 	style:"background-color:white;"
 }
+#delivery{
+	background-image: url(../image4.jpeg);
+	background-size: 80%;
+}
+#link3{
+	margin-top: 50%;
+}
+#deliverytitle{
+	color:#FF33CC;
+ 	font-size:400%;
+ 	text-align: center;
+ 	margin-top:-23%;
+
+
+}
+#fieldset1{
+	margin-top:30%;
+	
+
+}
+#fieldset2{
+	margin-top:10%
+}
+#delivery1{
+	margin-top:-6%;
+}
+#delivery2{
+	margin-top:-8%;
+}
+#nameletters{
+	color:#FF33CC;
+	font-size: 150%;
+	margin-left: 17%;
+	margin-top: 1.5%;
+	
+}
+#addressletters{
+	color:#FF33CC;
+	font-size: 150%;
+	margin-left: 17%;
+	margin-top: 1%;
+	
+
+}
+#locations{
+	background-color: white;
+
+
+}
+#delete{
+	border-radius: 10px;
+	font-size:100%;
+	margin-top: -.5%;
+	margin-left:1%;
+}
+
 
 
