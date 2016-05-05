@@ -18,7 +18,7 @@
 	</style>
 </head>
 <body id="placeOrder" >
-	<a class="options" href="../home.php">return home</a>
+	<a id="link1" class="options" href="../home.php">return home</a>
 	<h1 id="greentitle"> Order </h1>
 	<fieldset class="fieldset">
 	<form action="../include/dboperationOrder.php" method="POST">
@@ -27,7 +27,7 @@
 			<input type="hidden" name="ID" id="ID">
 
 			<p  id="green" >Box Type: </p>
-			<select id="box" name="box"></select>
+			<select id="box" name="box"></select><input type="number" name="quantity">
 			<br>
 
 			<p id="green">Delivery :</p><select id="scheduleDrop" name="schedule">
@@ -42,7 +42,7 @@
          					 		zoom: 12 });
 							var geocoder = new google.maps.Geocoder();
 							$.each(data, function(i, delivery){
-								$("#scheduleDrop").append("<option value ="+delivery.LocationName+"@"+delivery.DateT+">"+delivery.LocationName+" "+delivery.DateT+" "+delivery.TimeT+" "+delivery.LocationAddress+"</option>");
+								$("#scheduleDrop").append("<option value ="+delivery.LocationName+"|"+delivery.DateT+">"+delivery.LocationName+" "+delivery.DateT+" "+delivery.TimeT+" "+delivery.LocationAddress+"</option>");
 								var address = delivery.LocationAddress;
 								var title = delivery.LocationName;
 								geocoder.geocode({'address': address}, function(results, status) {
@@ -81,7 +81,7 @@
 
 				
 							$.each(data, function(i, box){
-								$("#box").append("<option value ="+box.BoxName+">"+box.BoxName+"</option>");
+								$("#box").append("<option value ="+box.BoxName+"|"+box.Price+">"+box.BoxName+"</option>");
 								
 
 							});
