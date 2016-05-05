@@ -5,12 +5,12 @@
 	<title>Delivery Schedule</title>
 	<link rel="stylesheet" type="text/css" href="../css/home.css">
 </head>
-<body class="admin">
+<body style="background-image: url(../img/boston.jpg)">
 	<h3><a href="../home.php">return home</a></h3>
-	<fieldset>
-	<legend>Current Orders</legend>
+	<fieldset class="fieldset">
+	<legend id="green" style="background-color: black">Current Orders</legend>
 	<table id="ordersTable">
-		<tr><th>Name</th><th>Box Type</th><th>Quantity</th><th>Price</th><th>Pick Up Date</th><th>Delivery Location</th></tr>
+		<tr id="green" style="background-color: black"><th>Name</th><th>Box Type</th><th>Quantity</th><th>Price</th><th>Pick Up Date</th><th>Delivery Location</th></tr>
 	</table>
 	</fieldset>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -20,7 +20,7 @@
 			$.getJSON( "../include/queryOrders.php" , function(data) {
 					
 							$.each(data, function(i, order){
-								$("#ordersTable").append("<tr><<td>" + order.FirstName + order.LastName + "</td><td>" + order.BoxType + "</td><td>" + order.Quantity + "</td><td>" + order.Price + "</td><td>" + order.PickupDate + "</td><td>" + order.DeliveryLocation + "</td></tr>");
+								$("#ordersTable").append("<tr id=\"green\" style=\"background-color: black\"><<td>" + order.FirstName + order.LastName + "</td><td>" + order.BoxType + "</td><td>" + order.Quantity + "</td><td>" + order.Price + "</td><td>" + order.PickupDate + "</td><td>" + order.DeliveryLocation + "</td></tr>");
 							});
 						
 						})
@@ -31,15 +31,15 @@
 	</script>
 	<br><br>
 	<form action="../include/insertDelivery.php" method="POST">
-	<fieldset>
-	<legend>Add Delivery</legend>
+	<fieldset class="fieldset">
+	<legend id="green" style="background-color: black">Add Delivery</legend>
 		Location: 
 		<select id="locations" name="name">
 			
 		</select><br>
-		Date of Delivery: 
+		<div id="green" style="background-color: black">Date of Delivery:</div>
 		<input type="date" name="date"><br>
-		Time of Delivery: 
+		<div id="green" style="background-color: black">Time of Delivery:</div>
 		<input type="time" name="time"><br>
 		<input type="submit" name="addDelivery" value="Add Delivery to Schedule">
 	</fieldset>
@@ -62,8 +62,8 @@
 	</script>
 
 	<br><br>
-	<fieldset>
-	<legend>Deliveries</legend>
+	<fieldset class = "fieldset">
+	<legend id="green" style="background-color: black">Deliveries</legend>
 	<table id="deliveries">
 		<tr class=""><th>Click to Delete</th><th>Date</th><th>Time</th><th>Location Name</th><th>Location Address</th></tr>
 	</table>
@@ -76,7 +76,7 @@
 					
 							$.each(data, function(i, delivery){
 
-								$("#deliveries").append("<tr><td><input type=\"button\" name=\"delete\" value=\"Delete\" onclick=\"toDelete(" + delivery.LocationName + ", " + delivery.DateT + ", " + delivery.TimeT + ")\"></td><td>" + delivery.DateT + "</td><td>" + delivery.TimeT + "</td><td>" + delivery.LocationName + "</td><td>" + delivery.LocationAddress + "</td></tr>");
+								$("#deliveries").append("<tr id=\"green\" style=\"background-color: black\"><td><input type=\"button\" name=\"delete\" value=\"Delete\" onclick=\"toDelete(" + delivery.LocationName + ", " + delivery.DateT + ", " + delivery.TimeT + ")\"></td><td>" + delivery.DateT + "</td><td>" + delivery.TimeT + "</td><td>" + delivery.LocationName + "</td><td>" + delivery.LocationAddress + "</td></tr>");
 
 							});
 						
