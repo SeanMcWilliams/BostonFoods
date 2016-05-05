@@ -15,25 +15,19 @@
 	function handleForm(){
 		$dbc = connect_to_db( "crawfocc" );
 		$firstName = $_POST["firstName"];
-		$firstName = $_POST["lastName"];
+		$lastName = $_POST["lastName"];
 		$ID = $_POST["ID"];
-		$boxType = (($_POST["box"]).explode("|"))[0];
-		$price = (($_POST["box"]).explode("|"))[1];
+		$boxTypeQ = (explode("|",($_POST["box"])));
+		$boxType = $boxTypeQ[0];
+		$price = $boxTypeQ[1];
+		$locNameQ = (explode("|",($_POST["schedule"])));
+		$locName = $locNameQ[0];
+		$date = $locNameQ[1];
 
-
-		$query = "SELECT * FROM DELIVERY_LOCATIONS WHERE Location_Name = '$name'";
-		$result = perform_query($dbc, $query);
-		$a = mysqli_fetch_array( $result, MYSQLI_ASSOC );
-		if (mysqli_num_rows( $result ) != 0){
-			echo "This Delivery Location already exists";
-			?> <br>
-			<a href="../pages/deliveryLocations.html">Return to add new location</a>
-			<?php
-			die("");
-		} 
-		$query2 = "INSERT INTO DELIVERY_LOCATIONS (Location_Name, Location_Address) VALUES ('$name', '$address')";
-		perform_query($dbc, $query2);
-		echo "<h2>Location added successfully!</h2>";
-		echo "<a href=\"../pages/deliveryLocations.html\">go back</a>";
+		$query = "INSERT INTO CURRENT_ORDERS (PickupDate, FirstName, LastName, CustID, BoxType, Quantity, Price, DeliveryLocation) VALUES ($date, $firstName, $lastName, $ID, $boxType, $price, $locName)";
+		echo $query;
+		perform_query($dbc, $query);
+		echo "<h2>Order Successful!</h2>";
+		echo "<a href=\"../home.php\">go to the Home Page!</a>";
 	}
 	

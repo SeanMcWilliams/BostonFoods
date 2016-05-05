@@ -18,7 +18,7 @@
 	</style>
 </head>
 <body id="placeOrder" >
-	<a id="link1" class="options" href="../home.php">return home</a>
+	<a  class="options" href="../home.php">return home</a>
 	<h1 id="greentitle"> Order </h1>
 	<fieldset class="fieldset">
 	<form action="../include/dboperationOrder.php" method="POST">
@@ -27,7 +27,7 @@
 			<input type="hidden" name="ID" id="ID">
 
 			<p  id="green" >Box Type: </p>
-			<select id="box" name="box"></select><input type="number" name="quantity">
+			<select id="box" name="box"></select><input type="number" name="quantity" min="1" max="10">
 			<br>
 
 			<p id="green">Delivery :</p><select id="scheduleDrop" name="schedule">
