@@ -101,8 +101,14 @@
 
 
 							$.each(data,function(i, order){
-								$("#currentOrders").append("<p>Hello</p>"+"<br>");
-								
+								console.log(order);
+								if(i == 0) {
+									$("#cOSelect").html("<option value=\"test\">test</option>");
+									#("#buttonDiv").html("<input type=\"submit\" value=\"Click to Delete this order\">");
+								} else {
+								    $("#cOSelect").append("<option>test</option>");
+								    #("#buttonDiv").html("<input type=\"submit\" value=\"Click to Delete this order\">");
+								}
 
 							});
 							})
@@ -117,7 +123,10 @@
 	<fieldset class="fieldset" id="cOFieldset">
 		<legend id="green" style="background-color: black">Current Orders</legend>
 		<form id="currentOrders">
-			
+			<select id="cOSelect" name="cOSelect">
+				<option>No Current Orders</option>
+				<div id="buttonDiv"></div>
+			</select>
 		</form>
 	</fieldset>
 	<div id="map"></div>
