@@ -13,6 +13,6 @@ $locationQ = "\"" . $location . "\"";
 $query = "INSERT INTO `DELIVERY_SCHEDULE` (DateT, TimeT, LocationName, LocationAddress) VALUES ($date, $time, $locationQ, $address);";
 //echo $query;
 $result = perform_query($dbc, $query);
-echo "Delivery added to schedule";
+echo "Delivery added to schedule<br>";
 echo "<a href=\"../pages/deliverySchedule.html\">return to the previous page</a>";
 ?>
