@@ -9,17 +9,17 @@
 	<fieldset>
 	<legend>Current Orders</legend>
 	<table id="ordersTable">
-		<tr><th>Click</th><th>Name</th><th>Box Type</th><th>Quantity</th><th>Price</th><th>Pick Up Date</th><th>Delivery Location</th></tr>
+		<tr><th>Name</th><th>Box Type</th><th>Quantity</th><th>Price</th><th>Pick Up Date</th><th>Delivery Location</th></tr>
 	</table>
 	</fieldset>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript">
 		$(document).ready(function buildTable(){
 
-			$.getJSON( "queryOrders.php" , function(data) {
+			$.getJSON( "../include/queryOrders.php" , function(data) {
 					
 							$.each(data, function(i, order){
-								$("#ordersTable").append("<tr><td><input type=\"checkbox\" name=\"hide[]\" value=\""+ order.CustID + "\"></td><td>" + order.FirstName + order.LastName + "</td><td>" + order.BoxType + "</td><td>" + order.Quantity + "</td><td>" + order.price + "</td><td>" + order.PickUpDate + "</td><td>" + order.DeliveryLocationName + "</td></tr>");
+								$("#ordersTable").append("<tr><<td>" + order.FirstName + order.LastName + "</td><td>" + order.BoxType + "</td><td>" + order.Quantity + "</td><td>" + order.Price + "</td><td>" + order.PickupDate + "</td><td>" + order.DeliveryLocation + "</td></tr>");
 							});
 						
 						})
