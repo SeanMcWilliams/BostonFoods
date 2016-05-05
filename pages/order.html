@@ -87,7 +87,7 @@
 
 				
 							$.each(data, function(i, box){
-								$("#box").append("<option value ="+"\""+box.BoxName+"|"+box.Price+"\">"+box.BoxName+"</option>");
+								$("#box").append("<option value ="+"\""+box.BoxName+"|"+box.Price+"\">"+box.BoxName+" $"+box.Price+"</option>");
 								
 
 							});
@@ -96,18 +96,20 @@
 								console.log( "getJSON error - boxes" );
 						});
 			var cookieID = (Cookies.get("ID"))+"";
+
 			//console.log(cookieID);
+			$("#hiddenID").val(cookieID);
 			$.getJSON( "../include/queryOrders.php",{id:cookieID}).done(function(data) {
 
 
 							$.each(data,function(i, order){
 								console.log(order);
 								if(i == 0) {
-									$("#cOSelect").html("<option value=\"test\">test</option>");
-									#("#buttonDiv").html("<input type=\"submit\" value=\"Click to Delete this order\">");
+									$("#cOSelect").html("<option value="+"\""+order.BoxType+"|"+order.Quantity+"|"+order.DeliveryLocation+"|"+order.PickupDate+"\""+">"+order.Quantity+" "+order.BoxType+" at "+order.Price+" per box, pickup: "+order.DeliveryLocation+" on "+order.PickupDate+"</option>");
+									$("#buttonDiv").html("<input type=\"submit\" value=\"Click to Delete this order\">");
 								} else {
-								    $("#cOSelect").append("<option>test</option>");
-								    #("#buttonDiv").html("<input type=\"submit\" value=\"Click to Delete this order\">");
+								    $("#cOSelect").append("<option value="+"\""+order.BoxType+"|"+order.Quantity+"|"+order.DeliveryLocation+"|"+order.PickupDate+"\""+">"+order.Quantity+" "+order.BoxType+" at "+order.Price+" per box, pickup: "+order.DeliveryLocation+" on "+order.PickupDate+"</option>");
+								    $("#buttonDiv").html("<input type=\"submit\" value=\"Click to Delete this order\">");
 								}
 
 							});
@@ -122,11 +124,15 @@
 	</fieldset>
 	<fieldset class="fieldset" id="cOFieldset">
 		<legend id="green" style="background-color: black">Current Orders</legend>
-		<form id="currentOrders">
+		<form id="currentOrders" action="dboperationDeleteOrder" method="post">
+		<br>
+		<input type="hidden" name="id" id="hiddenID">
 			<select id="cOSelect" name="cOSelect">
 				<option>No Current Orders</option>
-				<div id="buttonDiv"></div>
+			
 			</select>
+			<br>
+			<div id="buttonDiv"></div>
 		</form>
 	</fieldset>
 	<div id="map"></div>
