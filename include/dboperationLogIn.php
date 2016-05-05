@@ -21,11 +21,11 @@
 			setcookie("lastName", $lastName, time() + (86400 * 30),"/");
 			setcookie("ID", $ID, time() + (86400 * 30),"/");
 			setcookie("isAdmin", $isAdmin, time() + (86400 * 30),"/");
-			echo "<h1>Welcome back $firstName $lastName !</h1> <br>";
-			echo "<a href=\"../home.php\">Return To The Home Page</a>";
+			echo "<h1 id=\"green\" style=\"background-color: black\">Welcome back $firstName $lastName !</h1> <br>";
+			echo "<a id=\"green\" style=\"background-color: black\" href=\"../home.php\">Return To The Home Page</a>";
 	} else {
-		echo "<h1>User not found</h1><br>";
-		echo  "<a href=\"../pages/logIn.html\">Try Again</a>";
+		echo "<h1 id=\"green\" style=\"background-color: black\">User not found</h1><br>";
+		echo  "<a id=\"green\" style=\"background-color: black\" href=\"../pages/logIn.html\">Try Again</a>";
 	}
 }
 ?>
@@ -35,8 +35,9 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Log In Page</title>
+	<link rel="stylesheet" type="text/css" href="../css/home.css">
 </head>
-<body>
+<body style="background-image: url(../img/boston.jpg)">
 
 
 </body>
