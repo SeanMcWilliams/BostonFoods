@@ -75,7 +75,7 @@
 					
 							$.each(data, function(i, delivery){
 
-								$("#deliveries").append("<tr><td><input type=\"button\" name=\"delete\" value=\"Delete\"></td><td>" + delivery.DateT + "</td><td>" + delivery.TimeT + "</td><td>" + delivery.LocationName + "</td><td>" + delivery.LocationAddress + "</td></tr>");
+								$("#deliveries").append("<tr><td><input type=\"button\" name=\"delete\" value=\"Delete\" onclick=\"toDelete(" + delivery.LocationName + ", " + delivery.DateT + ", " + delivery.TimeT + ")\"></td><td>" + delivery.DateT + "</td><td>" + delivery.TimeT + "</td><td>" + delivery.LocationName + "</td><td>" + delivery.LocationAddress + "</td></tr>");
 
 							});
 						
@@ -84,6 +84,9 @@
 								console.log( "getJSON error" );
 						});
 					});
+		function toDelete(name, date, time) {
+			window.location.href = "../include/deleteDelivery.php?name="+name+"&date="+date+"&time="+time;
+		}
 	</script>
 
 </body>
