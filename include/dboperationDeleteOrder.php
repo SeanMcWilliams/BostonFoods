@@ -5,15 +5,18 @@
 	$dbc = connect_to_db( "crawfocc" );
 	$id = $_POST["id"];
 	$exploded = explode("|",$_POST["cOSelect"]);
+	//print_r($exploded);
 	$box = $exploded[0];
-	$location = $exploded[1];
-	$date = exploded[2];
+	$quantity = $exploded[1];
+	$location = $exploded[2];
+	$date = $exploded[3];
 
-	$query = "DELETE TOP 1 FROM `CURRENT_ORDERS` WHERE `CustID` = $id AND `BoxType` = '$box' AND DeliveryLocation = '$location' AND `PickupDate` = '$date';";
+	$query = "DELETE FROM `CURRENT_ORDERS` WHERE `CustID` = $id AND `BoxType` = '$box' AND DeliveryLocation = '$location' AND `PickupDate` = '$date' AND `Quantity` = $quantity LIMIT 1;";
+
 	perform_query($dbc, $query);
-	echo "<h2>Location successfully deleted!</h2>";
+	echo "<h2>Order Deleted successfully!</h2>";
 	echo "<a href=\"../home.php\">return home!</a><br>";
-	echo "<a href=\"../pages/deliveryLocations.html\">return to Deliveries!</a>";
+	echo "<a href=\"../pages/order.html\">return to Orders!</a>";
 
 
 ?>
