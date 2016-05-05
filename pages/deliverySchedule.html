@@ -74,7 +74,7 @@
 			$.getJSON( "../include/queryDeliveries.php" , function(data) {
 					
 							$.each(data, function(i, delivery){
-								$("#deliveries").append("<tr><td><input type=\"button\" name=\"delete\" value=\"" + delivery.Date + "," + delivery.Location_Name + "\">Delete</td><td>" + delivery.Date + "</td><td>" + delivery.Time + "</td><td>" + delivery.Location_Name + "</td><td>" + delivery.Location_Address + "</td></tr>");
+								$("#deliveries").append("<tr><td><input type=\"button\" name=\"delete\" value=\"" + delivery.Date + "," + delivery.Location_Name + "\">Delete</td><td>" + delivery.DateT + "</td><td>" + delivery.TimeT + "</td><td>" + delivery.Location_Name + "</td><td>" + delivery.Location_Address + "</td></tr>");
 							});
 						
 						})
