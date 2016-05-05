@@ -17,7 +17,7 @@ function checkpassword(){
 	$user = sha1($_POST['password']);
 	$type = $_POST['membership'];
 		if ($answer == $user){
-			$connect = connect_to_db("keeneb");
+			$connect = connect_to_db("crawfocc");
 			$query = "select email from club where MembershipType =\"$type\"";
 			$result = perform_query($connect, $query);
 			if (mysqli_num_rows($result) > 0) {
