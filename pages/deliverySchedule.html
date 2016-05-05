@@ -5,10 +5,13 @@
 	<title>Delivery Schedule</title>
 </head>
 <body>
-
+	<h3><a href="../home.php">return home</a></h3>
+	<fieldset>
+	<legend>Current Orders</legend>
 	<table id="ordersTable">
 		<tr><th>Click</th><th>Name</th><th>Box Type</th><th>Quantity</th><th>Price</th><th>Pick Up Date</th><th>Delivery Location</th></tr>
 	</table>
+	</fieldset>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript">
 		$(document).ready(function buildTable(){
@@ -41,7 +44,6 @@
 	</fieldset>
 	</form>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript">
 		$(document).ready(function(){
 
@@ -49,6 +51,30 @@
 					
 							$.each(data, function(i, location){
 								$("#locations").append("<option value=\""+ location.Location_Name + "\">" + location.Location_Name + "</option>");
+							});
+						
+						})
+						.fail(function() {
+								console.log( "getJSON error" );
+						});
+					});
+	</script>
+
+	<br><br>
+	<fieldset>
+	<legend>Deliveries</legend>
+	<table id="deliveries">
+		<tr><th>Click to Delete</th><th>Date</th><th>Time</th><th>Location Name</th><th>Location Address</th></tr>
+	</table>
+	</fieldset>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$.getJSON( "../include/queryDeliveries.php" , function(data) {
+					
+							$.each(data, function(i, delivery){
+								$("#deliveries").append("<tr><td><input type=\"button\" name=\"delete\" value=\"" + delivery.Date + "," + delivery.Location_Name + "\">Delete</td><td>" + delivery.Date + "</td><td>" + delivery.Time + "</td><td>" + delivery.Location_Name + "</td><td>" + delivery.Location_Address + "</td></tr>");
 							});
 						
 						})
