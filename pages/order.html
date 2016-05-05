@@ -103,13 +103,13 @@
 
 
 							$.each(data,function(i, order){
-								console.log(order);
+								//console.log(order);
 								if(i == 0) {
 									$("#cOSelect").html("<option value="+"\""+order.BoxType+"|"+order.Quantity+"|"+order.DeliveryLocation+"|"+order.PickupDate+"\""+">"+order.Quantity+" "+order.BoxType+" at "+order.Price+" per box, pickup: "+order.DeliveryLocation+" on "+order.PickupDate+"</option>");
-									$("#buttonDiv").html("<input type=\"submit\" value=\"Click to Delete this order\">");
+									$("#buttonDiv").html("<input type=\"submit\" class=\"button\" value=\"Click to Delete this order\">");
 								} else {
 								    $("#cOSelect").append("<option value="+"\""+order.BoxType+"|"+order.Quantity+"|"+order.DeliveryLocation+"|"+order.PickupDate+"\""+">"+order.Quantity+" "+order.BoxType+" at "+order.Price+" per box, pickup: "+order.DeliveryLocation+" on "+order.PickupDate+"</option>");
-								    $("#buttonDiv").html("<input type=\"submit\" value=\"Click to Delete this order\">");
+								    $("#buttonDiv").html("<input type=\"submit\" class=\"button\" value=\"Click to Delete this order\">");
 								}
 
 							});
@@ -117,24 +117,27 @@
 						.fail(function() {
 								console.log( "getJSON error - currentOrders" );
 						});
+
 					});
 			</script>
 			<input class="button" type="submit" value="submit order">
-			
+			</form>
 	</fieldset>
+	
 	<fieldset class="fieldset" id="cOFieldset">
 		<legend id="green" style="background-color: black">Current Orders</legend>
-		<form id="currentOrders" action="dboperationDeleteOrder" method="post">
+		<form action="../include/dboperationDeleteOrder" method="POST">
 		<br>
-		<input type="hidden" name="id" id="hiddenID">
+		<input type="hidden" name="id" id="hiddenID"/>
 			<select id="cOSelect" name="cOSelect">
 				<option>No Current Orders</option>
 			
 			</select>
 			<br>
 			<div id="buttonDiv"></div>
-		</form>
+			</form>
 	</fieldset>
+
 	<div id="map"></div>
 
 </body>
