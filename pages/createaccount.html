@@ -4,25 +4,26 @@
 	<meta charset="utf-8" />
 	<title>Create an account</title>
 	<script type="text/javascript" src="../js/myAccountValidate.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/home.css">
 </head>
-<body>
-	<h1> Create an account </h1>
+<body style="background-image: url(../img/boston.jpg)">
 	<a href="../home.php">return home</a>
-	<fieldset>
+	<fieldset class="fieldset">
+	<legend id="green" style="background-color: black">Create an Account</legend>>
 	<form action="../include/InsertAccount.php" method="POST" onsubmit = "return validate()">
-			First Name:<br>
+			<div style="background-image: url(../img/boston.jpg)">First Name:</div><br>
 			<input type="text" name="firstname" id="firstname" > <span class="error" id="firstnameerr"></span><br>
-			Last Name:<br>
+			<div style="background-image: url(../img/boston.jpg)">Last Name:</div><br>
 			<input type="text" name="lastname" id="lastname" > <span class="error" id="lastnameerr"></span><br>
-			Email:<br>
+			<div style="background-image: url(../img/boston.jpg)">Email:</div><br>
 			<input type="text" name="email" id="email"> <span class="error" id="emailerr"></span><br>
-			Phone:
+			<div style="background-image: url(../img/boston.jpg)">Phone:</div>
 			<input type="text" name="phone" id="phone"> <span class="error" id="phoneerr"></span><br>
-			Password:<br>
+			<div style="background-image: url(../img/boston.jpg)">Password:</div><br>
 			<input type="password" name="password1" id="password1"> <span class="error" id="p1err"></span><br>
-			Re-Enter Password:<br>
+			<div style="background-image: url(../img/boston.jpg)">Re-Enter Password:</div><br>
 			<input type="password" name="password2" id="password2"> <span class="error" id="p2err"></span><br>
-			<input type="submit" name="Submit" value="Submit">
+			<input class="button" type="submit" name="Submit" value="Submit">
 	</form>
 	</fieldset>
 </body>
