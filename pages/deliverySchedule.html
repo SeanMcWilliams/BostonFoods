@@ -75,9 +75,9 @@
 					
 							$.each(data, function(i, delivery){
 
-								$("#deliveries").append("<tr><td><input type=\"button\" name=\"delete\" value=\"" + delivery.DateT + "," + delivery.Location_Name + "\">Delete</td><td>" + delivery.DateT + "</td><td>" + delivery.TimeT + "</td><td>" + delivery.Location_Name + "</td><td>" + delivery.Location_Address + "</td></tr>");
+								$("#deliveries").append("<tr><td><input type=\"button\" name=\"delete\" value=\"" + delivery.DateT + "," + delivery.LocationName + "\">Delete</td><td>" + delivery.DateT + "</td><td>" + delivery.TimeT + "</td><td>" + delivery.LocationName + "</td><td>" + delivery.LocationAddress + "</td></tr>");
 
-								$("#deliveries").append("<tr><td><input type=\"button\" name=\"delete\" value=\"Delete\"></td><td>" + delivery.DateT + "</td><td>" + delivery.TimeT + "</td><td>" + delivery.Location_Name + "</td><td>" + delivery.Location_Address + "</td></tr>");
+								$("#deliveries").append("<tr><td><input type=\"button\" name=\"delete\" value=\"Delete\"></td><td>" + delivery.DateT + "</td><td>" + delivery.TimeT + "</td><td>" + delivery.LocationName + "</td><td>" + delivery.LocationAddress + "</td></tr>");
 
 							});
 						
