@@ -42,7 +42,7 @@
          					 		zoom: 12 });
 							var geocoder = new google.maps.Geocoder();
 							$.each(data, function(i, delivery){
-								$("#scheduleDrop").append("<option value ="+delivery.LocationName+"|"+delivery.DateT+">"+delivery.LocationName+" "+delivery.DateT+" "+delivery.TimeT+" "+delivery.LocationAddress+"</option>");
+								$("#scheduleDrop").append("<option value ="+"\""+delivery.LocationName+"|"+delivery.DateT+"\">"+delivery.LocationName+" "+delivery.DateT+" "+delivery.TimeT+" "+delivery.LocationAddress+"</option>");
 								var address = delivery.LocationAddress;
 								var title = delivery.LocationName;
 								geocoder.geocode({'address': address}, function(results, status) {
@@ -81,7 +81,7 @@
 
 				
 							$.each(data, function(i, box){
-								$("#box").append("<option value ="+box.BoxName+"|"+box.Price+">"+box.BoxName+"</option>");
+								$("#box").append("<option value ="+"\""+box.BoxName+"|"+box.Price+"\">"+box.BoxName+"</option>");
 								
 
 							});
