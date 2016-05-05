@@ -18,11 +18,17 @@
 	</style>
 </head>
 <body id="placeOrder" >
-	<a id="link1" class="options" href="../home.php">return home</a>
+	<a class="options" href="../home.php">return home</a>
 	<h1 id="greentitle"> Order </h1>
 	<fieldset class="fieldset">
 	<form action="../include/dboperationOrder.php" method="POST">
-			<p  id="green" >Box Type: </p><br>
+			<input type="hidden" name="firstName" id="firstName">
+			<input type="hidden" name="lastName" id="lastName">
+			<input type="hidden" name="ID" id="ID">
+
+			<p  id="green" >Box Type: </p>
+			<select id="box" name="box"></select>
+			<br>
 
 			<p id="green">Delivery :</p><select id="scheduleDrop" name="schedule">
 			</select><br>
@@ -58,7 +64,32 @@
 						.fail(function() {
 								console.log( "getJSON error - delivery Schedule" );
 						});
-			//alert(Cookies.get("ID"));
+			
+					});
+			</script>
+			<script>
+			$(document).ready(function(){
+				$("#firstName").val(Cookies.get("firstName"));
+				$("#lastName").val(Cookies.get("lastName"));
+				$("#ID").val(Cookies.get("ID"));
+			});
+			</script>
+			<script>
+			$(document).ready(function(){
+
+			$.getJSON( "../include/queryBoxes.php" , function(data) {
+
+				
+							$.each(data, function(i, box){
+								$("#box").append("<option value ="+box.BoxName+">"+box.BoxName+"</option>");
+								
+
+							});
+							})
+						.fail(function() {
+								console.log( "getJSON error - boxes" );
+						});
+			
 					});
 			</script>
 			<input class="button" type="submit" value="submit order">
