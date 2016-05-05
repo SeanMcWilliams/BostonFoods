@@ -10,7 +10,7 @@
 	<h1><a class="options" id="link3" href="../home.php">return home</a></h1>
 	<fieldset id="fieldset1" class="fieldset">
 	<legend id="delivery1" class="options">Add New Delivery Location</legend>
-	<form action="../include/dboperationAddDeliveryLoc.php" method="POST">
+	<form action="../include/AddDeliveryLoc.php" method="POST">
 			<p id="nameletters" class="options">Location Name</p><br>
 			<input class="textbox" style="background-color:#FF33CC" type="text" name="name" id="name" > <span class="error" id="nameerr"></span><br>
 			<p id="addressletters" class="options">Location Address</p><br>
@@ -21,7 +21,7 @@
 	<br><br>
 	<fieldset id="fieldset2"class="fieldset">
 	<legend id="delivery2"class="options">Delete Delivery Location</legend>
-		<form action="../include/dboperationDeleteDeliveryLoc.php" method="POST">
+		<form action="../include/DeleteDeliveryLoc.php" method="POST">
 			<select id="locations" name="locations">
 
 			</select>

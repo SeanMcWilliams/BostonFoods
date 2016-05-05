@@ -27,10 +27,7 @@
 		$query = "SELECT * FROM `CUSTOMERS` WHERE `Email` = $email";
 		$result = perform_query($dbc, $query);
 
-		
-
 		$a = mysqli_fetch_array( $result, MYSQLI_ASSOC );
-
 	
 		if (mysqli_num_rows( $result ) != 0){
 			echo "This email is already in use";
@@ -40,9 +37,7 @@
 			die("");
 		}
 
-
 		$query2 = "INSERT INTO CUSTOMERS (FirstName, LastName, Phone, Email, Password, IsAdmin) VALUES ($firstname, $lastname, $phone, $email, $p, 0)";
-		3
 		perform_query($dbc, $query2);
 		echo "<h1>Welcome to Boston Foods!</h1>";
 		echo "<a href=\"../home.php\">return to the home page</a>";
