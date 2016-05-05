@@ -4,6 +4,10 @@
 	<meta charset="utf-8" />
 	<title>Admin</title>
 	<link rel="stylesheet" type="text/css" href="../css/home.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
 		function validate(){
 			var subject = document.getElementById("subject").value;
@@ -33,7 +37,7 @@
 		}
 		</script>
 </head>
-<body id="admin">
+<body class="admin">
 	<p id="redtitle">Admin Page</p>
 	<?php 
 		displaytable();
@@ -50,6 +54,7 @@ function displaytable(){
 	$query = "select * from CUSTOMERS";
 	$result = perform_query($connect, $query);
 	$i = 1;
+	echo "<div class=\".col-md-4\">";
 	echo "<table class=\"table\"><tr id=\"tabletop\"><th>ID</th><th>FirstName</th><th>LastName</th><th>Phone</th><th>Email</th></tr>";
 		while ($row = $result->fetch_assoc()) {
 			if (($i%2)==0){
@@ -62,6 +67,7 @@ function displaytable(){
      		}
      	}	
      echo "</table>";
+     echo "</div>";
 		
 }
 function displayform(){
@@ -76,7 +82,7 @@ function displayform(){
 				<div id ="result">
 					<p id="errors" class="error"></p>
 				</div>
-				<input style="color:red;" class="button" type="submit" value="Submit">
+				<input class="button" type="submit" value="Submit">
 			</div>
 		</fieldset>
 	</form>

@@ -100,8 +100,8 @@ background-image: url(../img/boston.jpg);
 	border: solid purple;
 	background-image-size: 100%;
 }
-#admin{
-	background-image: url(../img/road.jpeg);
+.admin{
+	background-image: url(../img/images-1.jpeg);
 	background-size: 100%;
 }
 #redtitle{
