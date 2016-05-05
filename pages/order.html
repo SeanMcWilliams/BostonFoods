@@ -4,9 +4,9 @@
 	<meta charset="utf-8" />
 	<title>Place an Order</title>
 	<link rel="stylesheet" type="text/css" href="../css/home.css">
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBI_dSpZdUtWk8a9FzR3fNnwnO-4aYZctg&callback=initMap&libraries=places"
-    async defer></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBI_dSpZdUtWk8a9FzR3fNnwnO-4aYZctg"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	
 	<script src="../js/js-cookie-master/src/js.cookie.js"></script>
 	
 	<style>
@@ -27,19 +27,18 @@
 			<input type="hidden" name="ID" id="ID">
 
 			<p  id="green" >Box Type: </p>
-			<select id="box" name="box"></select><input type="number" name="quantity" min="1" max="10">
+			<select id="box" name="box"></select><input type="number" name="quantity" min="1" max="10" value="1" required>
 			<br>
 
 			<p id="green">Delivery :</p><select id="scheduleDrop" name="schedule">
 			</select><br>
 			<script>
 			$(document).ready(function(){
-
-			$.getJSON( "../include/queryDeliveries.php" , function(data) {
-
-							map = new google.maps.Map(document.getElementById('map'), {
+			map = new google.maps.Map(document.getElementById('map'), {
           							center: {lat: 42.3467, lng: -71.0972},
          					 		zoom: 12 });
+			$.getJSON( "../include/queryDeliveries.php" , function(data) {
+
 							var geocoder = new google.maps.Geocoder();
 							$.each(data, function(i, delivery){
 								$("#scheduleDrop").append("<option value ="+"\""+delivery.LocationName+"|"+delivery.DateT+"\">"+delivery.LocationName+" "+delivery.DateT+" "+delivery.TimeT+" "+delivery.LocationAddress+"</option>");
