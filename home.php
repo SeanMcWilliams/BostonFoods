@@ -1,5 +1,6 @@
 <?php
 
+include ('include/dbconn.php');
 
 
 $userName = null;
@@ -8,7 +9,33 @@ if(isset($_COOKIE["firstName"])){
   $userName = $_COOKIE["firstName"];
 }
 if(isset($_COOKIE["isAdmin"])){
+	$id = $_COOKIE["ID"];
+	$connect = connect_to_db("crawfocc");
+	$query = "select * from CUSTOMERS WHERE `ID` = $id";
+	$result = perform_query($connect, $query);
+	$status = 0;
 	$admin = $_COOKIE["isAdmin"];
+	while ($row = $result->fetch_assoc()) {
+      $status = $row["IsAdmin"];
+	}
+	while(true){
+		if($admin == $status){
+			break;
+		}
+		if($admin == 1 && $status == 0){
+			setcookie("isAdmin", 0, time() + (86400 * 30),"/");
+			$admin = 0;
+			break;
+		}
+		if($admin == 0 && $status == 1){
+			setcookie("isAdmin", 1, time() + (86400 * 30),"/");
+			$admin = 1;
+			break;
+		}
+
+	}
+
+	
 }
 
 ?>

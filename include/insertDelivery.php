@@ -13,6 +13,19 @@ $locationQ = "\"" . $location . "\"";
 $query = "INSERT INTO `DELIVERY_SCHEDULE` (DateT, TimeT, LocationName, LocationAddress) VALUES ($date, $time, $locationQ, $address);";
 //echo $query;
 $result = perform_query($dbc, $query);
-echo "Delivery added to schedule<br>";
-echo "<a href=\"../pages/deliverySchedule.html\">return to the previous page</a>";
 ?>
+
+<!DOCTYPE html>
+	<html>
+	<head>
+	<link rel="stylesheet" type="text/css" href="../css/home.css">
+	</head>
+	<body style="background-image: url(../img/boston.jpg)">
+
+<?php
+echo "<h1 id=\"green\" style=\"background:black\">Delivery added to schedule</h1>";
+echo "<a id=\"green\" style=\"background:black\" href=\"../pages/deliverySchedule.html\">return to the previous page</a>";
+?>
+
+</body>
+</html>

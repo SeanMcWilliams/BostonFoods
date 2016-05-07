@@ -38,6 +38,7 @@
 		</script>
 </head>
 <body class="admin">
+	<a href="../home.php" id="green" style="background:black">Return Home</a>
 	<p id="redtitle">Admin Page</p>
 	<?php 
 		displaytable();
@@ -55,14 +56,30 @@ function displaytable(){
 	$result = perform_query($connect, $query);
 	$i = 1;
 	echo "<div class=\".col-md-4\">";
-	echo "<table class=\"table\"><tr id=\"tabletop\"><th>ID</th><th>FirstName</th><th>LastName</th><th>Phone</th><th>Email</th></tr>";
+	echo "<table class=\"table\"><tr id=\"tabletop\"><th>ID</th><th>FirstName</th><th>LastName</th><th>Phone</th><th>Email</th><th>Admin</th></tr>";
 		while ($row = $result->fetch_assoc()) {
 			if (($i%2)==0){
-				echo "<tr class=\"even\"><td>" . $row["ID"]. "</td><td>" . $row["FirstName"]."</td><td>". $row["LastName"]. "</td><td>". $row["Phone"]. "</td><td>". $row["Email"]. "</td></tr>";
+				$tRow = "<tr class=\"even\"><td>" . $row["ID"]. "</td><td>" . $row["FirstName"]."</td><td>". $row["LastName"]. "</td><td>". $row["Phone"]. "</td><td>". $row["Email"]. "</td>";
+
+				if($row["IsAdmin"]==0){
+				    $tRow.= "<td><a href=\"makeAdmin.php?id=".$row["ID"]."&isAdmin=".$row["IsAdmin"]."\">Make Admin!</a></td>";
+				} else {
+					$tRow.= "<td><a href=\"makeAdmin.php?id=".$row["ID"]."&isAdmin=".$row["IsAdmin"]."\">Delete Admin Status!</a></td>";
+				}
+				$tRow.= "</tr>";
+				echo $tRow;
      			$i++;
      		}
      		else{
-     			echo "<tr class=\"odd\"><td>" . $row["ID"]. "</td><td>" . $row["FirstName"]."</td><td>". $row["LastName"]. "</td><td>". $row["Phone"]. "</td><td>". $row["Email"]. "</td></tr>";
+     			$tRow2 = "<tr class=\"odd\"><td>" . $row["ID"]. "</td><td>" . $row["FirstName"]."</td><td>". $row["LastName"]. "</td><td>". $row["Phone"]. "</td><td>". $row["Email"]. "</td>";
+
+				if($row["IsAdmin"]==0){
+				    $tRow2.= "<td><a href=\"makeAdmin.php?id=".$row["ID"]."&isAdmin=".$row["IsAdmin"]."\">Make Admin!</a></td>";
+				} else {
+					$tRow2.= "<td><a href=\"makeAdmin.php?id=".$row["ID"]."&isAdmin=".$row["IsAdmin"]."\">Delete Admin Status!</a></td>";
+				}
+				$tRow2.= "</tr>";
+				echo $tRow2;
      			$i++;
      		}
      	}	
