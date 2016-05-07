@@ -7,7 +7,19 @@
 
 	$query = "DELETE FROM `DELIVERY_SCHEDULE` WHERE `LocationName` = $name AND 'DateT' = $date AND 'TimeT' = $time";
 	perform_query($dbc, $query);
+	?>
+
+	<!DOCTYPE html>
+	<html>
+	<head>
+	</head>
+	<body style="background-image: url(../img/boston.jpg)">
+
+
+	<?php
 	echo "<h2>Delivery successfully deleted!</h2>";
 	echo "<a href=\"../home.php\">return home!</a><br>";
 	echo "<a href=\"../pages/deliveryLocations.html\">return to Deliveries!</a>";
 ?>
+  </body>
+  </html>
