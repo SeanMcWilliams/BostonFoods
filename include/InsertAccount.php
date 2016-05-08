@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<title>Join Page</title>
-</head>
-<body>
-
-</body>
-</html>
+	<html>
+	<head>
+	<link rel="stylesheet" type="text/css" href="../css/home.css">
+	<title>Insert Account</title>
+	</head>
+	<body style="background-image: url(../img/boston.jpg)">
 
 <?php
 	include ("dbconn.php");
@@ -30,16 +27,19 @@
 		$a = mysqli_fetch_array( $result, MYSQLI_ASSOC );
 	
 		if (mysqli_num_rows( $result ) != 0){
-			echo "This email is already in use";
-			?> <br>
-			<a href="../pages/createaccount.html">Return to sign-up</a>
-			<?php
-			die("");
-		}
+			echo "<div id=\"green\" style=\"background:black\">This email is already in use</div>";
+			echo "<br>";
+			echo "<a id=\"green\" style=\"background:black\" href=\"../pages/createaccount.html\">Return to sign-up</a>";
+
+		} else {
 
 		$query2 = "INSERT INTO CUSTOMERS (FirstName, LastName, Phone, Email, Password, IsAdmin) VALUES ($firstname, $lastname, $phone, $email, $p, 0)";
 		perform_query($dbc, $query2);
-		echo "<h1>Welcome to Boston Foods!</h1>";
-		echo "<a href=\"../home.php\">return to the home page</a>";
+		echo "<h1 id=\"green\" style=\"background:black\">Welcome to Boston Foods!</h1>";
+		echo "<a id=\"green\" style=\"background:black\"href=\"../home.php\">return to the home page</a>";
 	}
+}
 ?>
+
+</body>
+</html>

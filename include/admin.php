@@ -56,7 +56,7 @@ function displaytable(){
 	$result = perform_query($connect, $query);
 	$i = 1;
 	echo "<div class=\".col-md-4\">";
-	echo "<table class=\"table\"><tr id=\"tabletop\"><th>ID</th><th>FirstName</th><th>LastName</th><th>Phone</th><th>Email</th><th>Admin</th></tr>";
+	echo "<table class=\"table\" style=\"background:black\"><tr id=\"tabletop\"><th>ID</th><th>FirstName</th><th>LastName</th><th>Phone</th><th>Email</th><th>Admin</th></tr>";
 		while ($row = $result->fetch_assoc()) {
 			if (($i%2)==0){
 				$tRow = "<tr class=\"even\"><td>" . $row["ID"]. "</td><td>" . $row["FirstName"]."</td><td>". $row["LastName"]. "</td><td>". $row["Phone"]. "</td><td>". $row["Email"]. "</td>";

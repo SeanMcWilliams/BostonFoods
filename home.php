@@ -74,13 +74,13 @@ else {
 		if($admin == 1){
 			echo "<li><a href=\"include/admin.php\">Admin Page!</a></li> 
 			 <li><a href=\"pages/deliveryLocations.html\">Delivery Locations</a></li> 
-			 <li><a href=\"pages/deliverySchedule.html\">Delivery Schedule</a></li> 
-			 <li><a href=\"pages/boxes.html\">Boxes</a></li>"; 
+			 <li><a href=\"pages/deliverySchedule.html\">Delivery Schedule</a></li>";
 		}
 
 		if($userName != null){
 			echo "<li><a  href=\"pages/order.html\">Order!</a></li>";
 			echo "<li><a  href=\"pages/logOut.html\">Log Out!</a></li>";
+			echo "<li><a  href=\"pages/editAccount.html\">Edit Account</a></li>";
 
 		} else {
 			echo "<li><a  href=\"pages/logIn.html\">Log in!</a></li>";
@@ -88,7 +88,9 @@ else {
 
 		?>
 		<li><a href="pages/createaccount.html">Create An Account!</a></li>
+		<li><a href="pages/forgotPass.html">Forget Your Password?</a></li>
 		<li><a href="pages/aboutUs.html">About Us</a></li>
+		<li><a href="pages/boxes.html">Boxes</a></li> 
 	</ul>
 </body>
 </html>

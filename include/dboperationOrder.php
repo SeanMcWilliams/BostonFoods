@@ -34,6 +34,7 @@
 		//echo $query;
 		perform_query($dbc, $query);
 		echo "<h2 id=\"green\" style=\"background-color: black\">Order Successful!</h2>";
-		echo "<a id=\"green\" style=\"background-color: black\" href=\"../home.php\">go to the Home Page!</a>";
+		echo "<a id=\"green\" style=\"background-color: black\" href=\"../home.php\">go to the Home Page!</a><br>";
+		echo "<a id=\"green\" style=\"background-color: black\" href=\"../pages/order.html\">go back to Orders!</a>";
 	}
 	
