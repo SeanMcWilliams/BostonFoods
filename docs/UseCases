@@ -87,12 +87,16 @@ postcondition: delivery location loc is removed from the DELIVERY_LOCATIONS tabl
 Query: 
 DELETE * FROM DELIVERY_LOCATIONS WHERE LocationName = “loc”;
 
-c. Delivery Date is changed.
-Actor: Admin
+5. a. Account is upgraded to Admin
+
 precondition: logged in as Admin
-postcondition: Delivery  date for an order is changed
+postcondition: the IsAdmin column value is changed for an account to 1
 Query: 
-UPDATE * FROM DELIVERY_SCHEDULE WHERE LocationAddress = ‘Boston College’;
+UPDATE `CUSTOMERS` SET `IsAdmin`=1 WHERE `ID` = '$id';
 
+b. Account is downgraded from Admin
 
-
+precondition: logged in as Admin
+postcondition: the IsAdmin column value is changed for an account to 0
+Query: 
+UPDATE `CUSTOMERS` SET `IsAdmin`=0 WHERE `ID` = '$id';
